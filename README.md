@@ -253,18 +253,28 @@ gemini --version
 git clone https://github.com/dbaek-star/gemini-collab.git
 ```
 
-#### Windows (CMD)
+#### Windows — Git Bash (Recommended)
 
-```cmd
-mkdir "%USERPROFILE%\.claude\skills\gemini-collab" 2>nul
-xcopy /E /I /Y gemini-collab "%USERPROFILE%\.claude\skills\gemini-collab"
+> Claude Code on Windows uses Git Bash as the default shell. This is the recommended method.
+
+```bash
+mkdir -p ~/.claude/skills/gemini-collab
+cp -r gemini-collab/. ~/.claude/skills/gemini-collab/
 ```
 
-#### Windows (PowerShell)
+#### Windows — CMD
+
+```cmd
+mkdir "%USERPROFILE%\.claude\skills\gemini-collab"
+xcopy /E /I /Y "gemini-collab" "%USERPROFILE%\.claude\skills\gemini-collab\"
+```
+
+#### Windows — PowerShell
 
 ```powershell
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\gemini-collab" | Out-Null
-Copy-Item -Recurse -Force .\gemini-collab\* "$env:USERPROFILE\.claude\skills\gemini-collab"
+$dest = "$env:USERPROFILE\.claude\skills\gemini-collab"
+New-Item -ItemType Directory -Force -Path $dest | Out-Null
+Copy-Item -Path ".\gemini-collab\*" -Destination $dest -Recurse -Force
 ```
 
 #### macOS / Linux
