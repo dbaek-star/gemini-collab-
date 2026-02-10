@@ -251,7 +251,7 @@ gemini --version
 
 ```bash
 # 저장소 클론
-git clone https://github.com/your-username/gemini-collab.git
+git clone https://github.com/dbaek-star/gemini-collab.git
 
 # Claude Code 스킬 디렉토리에 복사
 # Windows
